@@ -11,6 +11,7 @@ View(ObesityFile)
 
 library("dplyr")
 library("ggplot2")
+library("tidyverse")
 
 View(ObesityFile$Value)
 
@@ -26,3 +27,12 @@ View(ObesityFile2)
 
 totalYear <- ObesityFile2 %>% group_by(`Age Group`)
 totalYear
+
+AgeGroup18to29 <- ObesityFile2 %>% select(`Age Group`) 
+AgeGroup18to29
+
+view(ObesityFile2)
+
+#select columns we need
+obesitycol <- ObesityFile2 %>% select(c("Year", "Age Group", "percValue"))
+view(obesitycol)
