@@ -25,14 +25,9 @@ ObesityFile2 <- mutate(ObesityFile, percValue)
 ObesityFile2
 View(ObesityFile2)
 
-totalYear <- ObesityFile2 %>% group_by(`Age Group`)
-totalYear
 
-AgeGroup18to29 <- ObesityFile2 %>% select(`Age Group`) 
-AgeGroup18to29
+ObesityFile2 <- ObesityFile2 %>% 
+  filter(`Age Group` != "TOTAL")
 
-view(ObesityFile2)
+View(ObesityFile2)
 
-#select columns we need
-obesitycol <- ObesityFile2 %>% select(c("Year", "Age Group", "percValue"))
-view(obesitycol)
