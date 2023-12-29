@@ -4,11 +4,11 @@ library("ggplot2")
 library("tidyverse")
 
 
-#reading the excel file
+#reading the excel data
 ObesityFile <- read_excel("C:/Users/user/Documents/R projects/obesity-estimation-by-age-group-and-year.xlsx", col_names = TRUE, na= "")
 ObesityFile
 
-#observing the file
+#observing the data
 str(ObesityFile)
 
 head(ObesityFile, 10)
@@ -16,9 +16,6 @@ tail(ObesityFile, 10)
 
 View(ObesityFile)
 
-
-
-View(ObesityFile$Value)
 
 #rounding up the value column by multiplying the values by 100 and creating a new column
 percValue <- ObesityFile$Value * 100
@@ -28,7 +25,7 @@ percValue
 ObesityFile2 <- mutate(ObesityFile, percValue)
 ObesityFile2
 
-
+#removing unwanted rows by column value from the data
 ObesityFile2 <- ObesityFile2 %>% 
   filter(`Age Group`!= "TOTAL")
 
